@@ -11,6 +11,8 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     lateinit var diceImage : ImageView
+    lateinit var diceImage2 : ImageView
+    lateinit var diceImage3 : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,13 +22,22 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener { rollDice() }
         resetButton.setOnClickListener{ resetDice()}
         diceImage = findViewById(R.id.dice_image)
-
+        diceImage2 = findViewById(R.id.dice2_image)
+        diceImage3 = findViewById(R.id.dice3_image)
     }
 
     private fun rollDice() {
         Toast.makeText(this, "button clicked",
             Toast.LENGTH_SHORT).show()
 
+
+        diceImage.setImageResource(generateRandom())
+        diceImage2.setImageResource(generateRandom())
+        diceImage3.setImageResource(generateRandom())
+
+    }
+
+    private fun generateRandom():Int{
         val randomInt = Random().nextInt(6) + 1
 
         val drawableResource = when (randomInt) {
@@ -38,18 +49,15 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
-        diceImage.setImageResource(drawableResource)
-
-
-
-
-
+        return drawableResource
     }
 
     private fun resetDice() {
         Toast.makeText(this, "button clicked",
             Toast.LENGTH_SHORT).show()
         diceImage.setImageResource(R.drawable.empty_dice)
+        diceImage2.setImageResource(R.drawable.empty_dice)
+        diceImage3.setImageResource(R.drawable.empty_dice)
 
 
 

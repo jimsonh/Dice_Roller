@@ -11,11 +11,27 @@
 
     <ImageView
         android:id="@+id/dice_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/empty_dice"
-        tools:src="@drawable/dice_1"/>
+        tools:src="@drawable/dice_1" />
+
+    <ImageView
+        android:id="@+id/dice2_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/empty_dice"
+        tools:src="@drawable/dice_1" />
+
+    <ImageView
+        android:id="@+id/dice3_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/empty_dice"
+        tools:src="@drawable/dice_1" />
 
     <Button
         android:id="@+id/rollBtn"
